@@ -23,7 +23,7 @@
           mask-size: auto 100%;
   cursor: pointer;
 }
-.btn > span {
+.btn > span:not(.btn-border) {
   position: relative;
   overflow: hidden;
   display: block;
@@ -33,7 +33,7 @@
   -webkit-mask-size: auto 100%;
           mask-size: auto 100%;
 }
-.btn > span:before {
+.btn > span:not(.btn-border):before {
   position: absolute;
   top: 0;
   left: 0;
@@ -45,39 +45,80 @@
   transition: 0.3s;
   content: "";
 }
-.btn > span > span {
+.btn > span:not(.btn-border) > span {
   position: relative;
   display: block;
   padding-top: 15px;
   padding-bottom: 15px;
 }
-.btn > span > span:before, .btn > span > span:after {
+.btn > span:not(.btn-border) > span:before, .btn > span:not(.btn-border) > span:after {
   position: absolute;
   top: 50%;
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border: solid 1px #4d667f;
   border-radius: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   content: "";
 }
-.btn > span > span:before {
-  left: 8px;
+.btn > span:not(.btn-border) > span:before {
+  left: 10px;
 }
-.btn > span > span:after {
-  right: 8px;
+.btn > span:not(.btn-border) > span:after {
+  right: 10px;
 }
 .btn:hover, .btn:focus {
   color: #ffe8c9;
 }
-.btn:hover > span:before, .btn:focus > span:before {
+.btn:hover > span:not(.btn-border):before, .btn:focus > span:not(.btn-border):before {
   width: 100%;
 }
-.btn.inline-block > span > span {
+.btn.inline-block > span:not(.btn-border) > span {
   padding-left: 50px;
   padding-right: 50px;
+}
+.btn-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-border:before, .btn-border:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 95%;
+  background-color: #fff;
+  -webkit-mask-image: url(../img/btn_border_mask-min.png);
+          mask-image: url(../img/btn_border_mask-min.png);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: auto 100%;
+          mask-size: auto 100%;
+  content: "";
+}
+.btn-border:before {
+  left: 0;
+  -webkit-mask-position: center left;
+          mask-position: center left;
+}
+.btn-border:after {
+  right: 0;
+  -webkit-mask-position: center right;
+          mask-position: center right;
+}
+.btn:has(.btn-border) > span:not(.btn-border) {
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.btn:has(.btn-border) > span:not(.btn-border) > span:before, .btn:has(.btn-border) > span:not(.btn-border) > span:after {
+  border-color: #fff;
 }
 
 @media screen and (min-width:768px) {

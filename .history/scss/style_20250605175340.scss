@@ -24,66 +24,60 @@
 	mask-size: auto 100%;
 	cursor: pointer;
 	> span {
-		&:not(.btn-border) {
-			position: relative;
-			overflow: hidden;
+		position: relative;
+		overflow: hidden;
+		display: block;
+		background-color: conf.$light;
+		mask: url(../img/btn_mask-min.png) center right no-repeat;
+		mask-size: auto 100%;
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
 			display: block;
-			background-color: conf.$light;
-			mask: url(../img/btn_mask-min.png) center right no-repeat;
-			mask-size: auto 100%;
-			&:before {
+			width: 0;
+			background-color: conf.$base;
+			transition: 0.3s;
+			content: "";
+		}
+		> span {
+			position: relative;
+			display: block;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			&:before, &:after {
 				position: absolute;
-				top: 0;
-				left: 0;
-				bottom: 0;
+				top: 50%;
 				display: block;
-				width: 0;
-				background-color: conf.$base;
-				transition: 0.3s;
+				width: 10px;
+				height: 10px;
+				border: solid 1px conf.$navy-light;
+				border-radius: 50%;
+				transform: translateY(-50%);
 				content: "";
 			}
-			> span {
-				position: relative;
-				display: block;
-				padding-top: 15px;
-				padding-bottom: 15px;
-				&:before, &:after {
-					position: absolute;
-					top: 50%;
-					display: block;
-					width: 8px;
-					height: 8px;
-					border: solid 1px conf.$navy-light;
-					border-radius: 50%;
-					transform: translateY(-50%);
-					content: "";
-				}
-				&:before {
-					left: 10px;
-				}
-				&:after {
-					right: 10px;
-				}
+			&:before {
+				left: 8px;
+			}
+			&:after {
+				right: 8px;
 			}
 		}
 	}
 	&:hover, &:focus {
 		color: conf.$light;
 		> span {
-			&:not(.btn-border) {
-				&:before {
-					width: 100%;
-				}
+			&:before {
+				width: 100%;
 			}
 		}
 	}
 	&.inline-block {
 		> span {
-			&:not(.btn-border) {
-				> span {
-					padding-left: 50px;
-					padding-right: 50px;
-				}
+			> span {
+				padding-left: 50px;
+				padding-right: 50px;
 			}
 		}
 	}
@@ -110,14 +104,10 @@
 		}
 	}
 	&:has(.btn-border) {
-		> span {
-			&:not(.btn-border) {
-				color: #fff !important;
-				background-color: rgba(#000, 0.3);
-				> span {
-					&:before, &:after {
-						border-color: #fff;
-					}
+		&:not(:hover):not(:focus) {
+			> span {
+				&:not(.btn-border) {
+					background-color: transparent;
 				}
 			}
 		}

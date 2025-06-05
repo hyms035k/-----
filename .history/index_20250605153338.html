@@ -19,51 +19,6 @@
             }
         }
         @layer utilities {
-            .outside-double-border {
-                @apply flex items-center mx-auto md:w-36 lg:w-48 xl:w-64;
-            }
-            .outside-double-border:before,
-            .outside-double-border:after {
-                @apply block flex-grow border-t lg:border-t-2 border-[#ffe8c9] border-b lg:border-b-2 border-[#ffe8c9] h-[5px] lg:h-[8px];
-                content: "";
-            }
-            .outside-double-border:before {
-                @apply mr-1;
-            }
-            .outside-double-border:after {
-                @apply ml-1;
-            }
-            .category-banner {
-                @apply relative block h-[35vw] md:h-[126px] lg:h-[170px] xl:h-[238px];
-            }
-            .category-banner > img {
-                @apply absolute inset-0 w-full h-full object-cover z-0;
-            }
-            .category-banner > .overlay-filter {
-                @apply absolute block top-0 left-0 h-full z-10;
-                width: 22.6765799%;
-                background-color: #444140;
-                mix-blend-mode: overlay;
-            }
-            .category-banner > .banner-label {
-                @apply absolute inset-0 z-20 flex items-center pl-6 md:pl-8 pb-10 text-white;
-            }
-            .category-banner > .banner-label > span {
-                @apply block;
-            }
-            .category-banner > .banner-label > span > :not(.font-serif) {
-                @apply block font-medium leading-tight;
-            }
-            .category-banner > .banner-label > span > .font-serif {
-                @apply block text-3xl lg:text-4xl xl:text-[60px] leading-none tracking-wide;
-            }
-            .category-banner > .banner-line-6 {
-                @apply absolute block bottom-4 left-1/2 w-full -translate-x-1/2 flex flex-col gap-[3px] z-20;
-                opacity: 0.75;
-            }
-            .category-banner > .banner-line-6 > span {
-                @apply block h-[1px] bg-white;
-            }
             @screen md {
                 .leading-relaxed {
                     line-height: 1.84;
@@ -145,7 +100,7 @@
 <body class="font-sans antialiased text-[#1a2530] bg-[#1a2530]">
 
     <!-- ヒーローセクション -->
-    <section id="hero-section" class="h-screen md:h-[56.25vw] lg:h-screen flex flex-col items-center justify-center bg-cover bg-center text-white" aria-labelledby="hero-heading">
+    <section id="hero-section" class="h-screen flex flex-col items-center justify-center bg-cover bg-center text-white" aria-labelledby="hero-heading">
         <div class="container h-full flex flex-col items-center justify-center">
             <!-- ロゴのプレースホルダー -->
             <h1 class="hero-logo w-[80%] md:w-[46.1538461%] mx-auto"><img src="./img/top__hero_logo-min.png" alt=""></h1>
@@ -158,16 +113,16 @@
     <main class="px-2 md:px-[30px]">
         <section id="block-1st" class="bg-cover bg-center">
             <div class="container block-box">
-                <div class="md:grid md:grid-cols-2 md:gap-[30px] lg:gap-[60px] items-center">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-[60px] items-center">
                     <div class="flex flex-col">
-                        <div class="md:flex md:items-baseline md:gap-x-2 xl:gap-x-4 text-center md:text-left">
-                            <p class="font-serif text-4xl text-5xl xl:text-[65px] leading-tight">Message</p>
-                            <h2 class="font-sans lg:text-lg xl:text-[20px] mt-1">メッセージ</h2>
+                        <div class="md:flex md:items-baseline md:gap-x-4 text-center md:text-left">
+                            <p class="font-serif text-4xl lg:text-[65px] leading-tight">Message</p>
+                            <h2 class="font-sans lg:text-[20px] mt-1">メッセージ</h2>
                         </div>
-                        <div class="md:hidden my-5">
+                        <div class="lg:hidden my-5">
                             <img src="./img/top__block1st_image.jpg" alt="メッセージのイメージ (スマホ)" class="w-full h-auto object-cover">
                         </div>
-                        <div class="md:mt-5 lg:mt-10">
+                        <div class="lg:mt-10">
                             <h3 class="font-sans text-[1.3rem] lg:text-[24px] font-medium">音を愛し、心に寄り添う。</h3>
                             <p class="font-sans text-base mt-4 leading-relaxed">
                                 ここに和文のコメントが入ります。私たちのサービスや製品が、どのようにしてお客様の心に寄り添い、日常に彩りを与えるのか、その思いを込めてお伝えします。
@@ -175,7 +130,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="hidden md:flex items-center justify-center">
+                    <div class="hidden lg:flex items-center justify-center">
                         <img src="./img/top__block1st_image.jpg" alt="メッセージのイメージ (PC)" class="w-full max-w-md h-auto object-cover">
                     </div>
                 </div>
@@ -188,9 +143,9 @@
                 <div id="topics" class="block-box pb-0 text-[#ffe8c9]">
                     <div class="max-w-6xl mx-auto">
                         <div class="md:flex md:items-center md:justify-between">
-                            <div class="tracking-wide md:flex md:items-baseline md:gap-x-2 xl:gap-x-4 text-center md:text-left">
-                                <p class="text-4xl text-5xl xl:text-[56px] font-serif leading-tight">Topics</p>
-                                <h2 class="lg:text-lg xl:text-[20px] ml-2 mt-1 md:mt-0 font-sans">おすすめ商品</h2>
+                            <div class="tracking-wide md:flex md:items-baseline md:gap-x-4 text-center md:text-left">
+                                <p class="text-4xl lg:text-[56px] font-serif leading-tight">Topics</p>
+                                <h2 class="lg:text-[20px] ml-2 mt-1 md:mt-0 font-sans">おすすめ商品</h2>
                             </div>
                             <div class="quick-tab flex justify-center md:justify-end gap-2 lg:gap-4 text-sm mt-4 md:mt-0">
                                 <div class="btn text-center active"><span><span>ランキング</span></span></div>
@@ -198,41 +153,41 @@
                             </div>
                         </div>
                         <!-- 商品カードリスト -->
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-3 lg:gap-6 mt-6 mb-11">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6 mb-11">
                             <!-- 商品カード（繰り返し） -->
-                            <a href="" class="text-left block">
-                                <img src="./img/top__block2nd_topics_guiter_1.jpg" alt="Limited Dreadnought Bass" class="mx-auto mb-4">
-                                <span class="block text-xs sm:text-sm">
+                            <div class="text-left">
+                                <img src="./img/top__block2nd_topics_guiter_1.jpg" alt="Limited Dreadnought Bass" class="mx-auto mb-2">
+                                <p class="text-xs sm:text-sm">
                                     Limited Dreadnought Bass®<br>
                                     モデルNo: G0041026789
-                                </span>
-                                <span class="block mt-1 font-medium">¥101,500</span>
-                            </a>
+                                </p>
+                                <p class="mt-1 font-medium">¥101,500</p>
+                            </div>
                             <!-- 以下、繰り返し -->
-                            <a href="" class="text-left block">
-                                <img src="./img/top__block2nd_topics_guiter_2.jpg" alt="Limited Dreadnought Bass" class="mx-auto mb-4">
-                                <span class="block text-xs sm:text-sm">
+                            <div class="text-left">
+                                <img src="./img/top__block2nd_topics_guiter_2.jpg" alt="Limited Dreadnought Bass" class="mx-auto mb-2">
+                                <p class="text-xs sm:text-sm">
                                     Limited Dreadnought Bass®<br>
                                     モデルNo: G0041026790
-                                </span>
-                                <span class="block mt-1 font-medium">¥119,500</span>
-                            </a>
-                            <a href="" class="text-left block">
-                                <img src="./img/top__block2nd_topics_guiter_3.jpg" alt="Limited Dreadnought Bass" class="mx-auto mb-4">
-                                <span class="block text-xs sm:text-sm">
+                                </p>
+                                <p class="mt-1 font-medium">¥119,500</p>
+                            </div>
+                            <div class="text-left">
+                                <img src="./img/top__block2nd_topics_guiter_3.jpg" alt="Limited Dreadnought Bass" class="mx-auto mb-2">
+                                <p class="text-xs sm:text-sm">
                                     Limited Dreadnought Bass®<br>
                                     モデルNo: G0041026791
-                                </span>
-                                <span class="block mt-1 font-medium">¥110,500</span>
-                            </a>
-                            <a href="" class="text-left block">
-                                <img src="./img/top__block2nd_topics_guiter_4.jpg" alt="Limited Dreadnought Bass" class="mx-auto mb-4">
-                                <span class="block text-xs sm:text-sm">
+                                </p>
+                                <p class="mt-1 font-medium">¥110,500</p>
+                            </div>
+                            <div class="text-left">
+                                <img src="./img/top__block2nd_topics_guiter_4.jpg" alt="Limited Dreadnought Bass" class="mx-auto mb-2">
+                                <p class="text-xs sm:text-sm">
                                     Limited Dreadnought Bass®<br>
                                     モデルNo: G0041026792
-                                </span>
-                                <span class="block mt-1 font-medium">¥113,500</span>
-                            </a>
+                                </p>
+                                <p class="mt-1 font-medium">¥113,500</p>
+                            </div>
                         </div>
                         <div class="text-center">
                             <a href="#" class="inline-block btn text-center"><span><span>詳しく見る</span></span></a>
@@ -242,91 +197,95 @@
 
                 <!-- 定番商品 / Category セクション -->
                 <div id="category" class="block-box pb-0 text-[#ffe8c9]">
-                    <div class="text-center mb-8 md:mb-11">
-                        <h2 class="outside-double-border lg:text-lg xl:text-[20px] font-medium leading-tight">定番商品</h2>
-                        <p class="font-serif text-4xl lg:text-5xl xl:text-[70px] leading-tight lg:leading-none">Category</p>
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl md:text-4xl lg:text-[20px] font-medium mb-2 leading-tight">定番商品</h2>
+                        <p class="font-serif text-lg lg:text-[70px] leading-none">Category</p>
                     </div>
 
                     <!-- バナー 2x2 -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <!-- バナー1 -->
                         <a href="" class="category-banner">
-                            <img src="./img/top__block2nd_category_1.jpg" alt="バナー1">
-                            <span class="overlay-filter"></span>
-                            <span class="banner-label">
-                                <span>
-                                    <span>ギター</span>
-                                    <span class="font-serif">Guitar</span>
-                                </span>
-                            </span>
-                            <span class="banner-line-6">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </span>
+                            <img src="./img/top__block2nd_category_1.jpg" alt="バナー1" class="absolute inset-0 w-full h-full object-cover z-0">
+                            <div class="absolute top-0 left-0 h-full z-10"
+                                style="width:22.6765799%; background-color:#444140; mix-blend-mode:overlay;"></div>
+                            <div class="absolute inset-0 z-20 flex items-center pl-6 text-white">
+                                <div>
+                                    <p class="font-medium leading-tight">ギター</p>
+                                    <p class="font-serif text-sm lg:text-[60px] leading-none tracking-wide">Guitar</p>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col gap-[2px] z-20">
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                            </div>
                         </a>
 
                         <!-- バナー2 -->
                         <a href="" class="category-banner">
-                            <img src="./img/top__block2nd_category_2.jpg" alt="バナー2">
-                            <span class="overlay-filter"></span>
-                            <span class="banner-label">
-                                <span>
-                                    <span>アクセサリ</span>
-                                    <span class="font-serif">Accessories</span>
-                                </span>
-                            </span>
-                            <span class="banner-line-6">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </span>
+                            <img src="./img/top__block2nd_category_2.jpg" alt="バナー2" class="absolute inset-0 w-full h-full object-cover z-0">
+                            <div class="absolute top-0 left-0 h-full z-10"
+                                style="width:22.6765799%; background-color:#444140; mix-blend-mode:overlay;"></div>
+                            <div class="absolute inset-0 z-20 flex items-center pl-6 text-white">
+                                <div>
+                                    <p class="font-medium leading-tight">アクセサリ</p>
+                                    <p class="font-serif text-sm lg:text-[60px] leading-none tracking-wide">Accessories</p>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col gap-[2px] z-20">
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                            </div>
                         </a>
 
                         <!-- バナー3 -->
                         <a href="" class="category-banner">
-                            <img src="./img/top__block2nd_category_3.jpg" alt="バナー3">
-                            <span class="overlay-filter"></span>
-                            <span class="banner-label">
-                                <span>
-                                    <span>弦</span>
-                                    <span class="font-serif">String</span>
-                                </span>
-                            </span>
-                            <span class="banner-line-6">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </span>
+                            <img src="./img/top__block2nd_category_3.jpg" alt="バナー3" class="absolute inset-0 w-full h-full object-cover z-0">
+                            <div class="absolute top-0 left-0 h-full z-10"
+                                style="width:22.6765799%; background-color:#444140; mix-blend-mode:overlay;"></div>
+                            <div class="absolute inset-0 z-20 flex items-center pl-6 text-white">
+                                <div>
+                                    <p class="font-medium leading-tight">弦</p>
+                                    <p class="font-serif text-sm lg:text-[60px] leading-none tracking-wide">String</p>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col gap-[2px] z-20">
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                            </div>
                         </a>
 
                         <!-- バナー4 -->
                         <a href="" class="category-banner">
-                            <img src="./img/top__block2nd_category_4.jpg" alt="バナー4">
-                            <span class="overlay-filter"></span>
-                            <span class="banner-label">
-                                <span>
-                                    <span>オリジナル商品</span>
-                                    <span class="font-serif">Kawase original</span>
-                                </span>
-                            </span>
-                            <span class="banner-line-6">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </span>
+                            <img src="./img/top__block2nd_category_4.jpg" alt="バナー4" class="absolute inset-0 w-full h-full object-cover z-0">
+                            <div class="absolute top-0 left-0 h-full z-10"
+                                style="width:22.6765799%; background-color:#444140; mix-blend-mode:overlay;"></div>
+                            <div class="absolute inset-0 z-20 flex items-center pl-6 text-white">
+                                <div>
+                                    <p class="font-medium leading-tight">オリジナル商品</p>
+                                    <p class="font-serif text-sm lg:text-[60px] leading-none tracking-wide">Kawase original</p>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col gap-[2px] z-20">
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                                <div class="w-24 h-[1px] bg-white"></div>
+                            </div>
                         </a>
                     </div>
                 </div>

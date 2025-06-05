@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カワセ楽器（デモ）</title>
+
+    <!-- Tailwind CSS CDN (開発版 - JITコンパイラ含む) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind CSS の設定 (任意)
+        // ここでテーマのカスタマイズなどが可能ですが、まずはデフォルトで進めます。
+        // 例: tailwind.config = { theme: { extend: { colors: { 'custom-blue': '#243c5a' } } } }
+    </script>
+    <style type="text/tailwindcss">
+        @screen md {
+            .container {
+                @apply max-w-[650px]; /* 768px以上でコンテナのmax-widthは650px */
+            }
+        }
+        @screen lg {
+            .container {
+                @apply max-w-[870px]; /* 992px以上でコンテナのmax-widthは870px */
+            }
+        }
+        @screen xl {
+            .container {
+                @apply max-w-[1070px]; /* 1200px以上でコンテナのmax-widthは1070px */
+            }
+        }
+        @screen 2xl {
+            .container {
+                @apply max-w-[1170px]; /* 1367px以上でコンテナのmax-widthは1170px */
+            }
+        }
+    </style>
+
+    <!-- GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
+    <!-- Interフォントの読み込み (Tailwind CSSのデフォルトフォントファミリーと相性が良い) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        // InterフォントをTailwind CSSのデフォルトフォントとして設定
+        tailwind.config = {
+            theme: {
+                // カスタムブレークポイントの定義
+                screens: {
+                    'sm': '640px',   // Tailwind CSSのデフォルト 'sm'
+                    'md': '768px',   // ユーザー指定のBP
+                    'lg': '992px',   // ユーザー指定のBP
+                    'xl': '1200px',  // ユーザー指定のBP
+                    '2xl': '1367px', // ユーザー指定のBP
+                },
+                // .container クラスのカスタマイズ
+                container: {
+                    center: true, // コンテナを中央揃えにする
+                },
+                extend: {
+                    fontFamily: {
+                        // デフォルトのサンセリフフォントを Kiwi Maru に設定
+                        sans: ['Kiwi Maru', 'Inter', 'sans-serif'],
+                        // 見出し等で使用するセリフフォントとして Bree Serif を設定
+                        serif: ['Bree Serif', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <link href="./css/style.min.css" rel="stylesheet">
+</head>
+<body class="font-sans antialiased text-gray-200 bg-[#1a2530]">
+
+    <!-- ヒーローセクション -->
+    <section id="hero-section" class="h-screen w-screen flex flex-col items-center justify-center bg-cover bg-center text-white" aria-labelledby="hero-heading">
+        <div class="container mx-auto h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+            <!-- ロゴのプレースホルダー -->
+            <h1 class="hero-logo"><img src="./img/top__hero_logo-min.png" alt=""></h1>
+            <h2 id="hero-heading" class="text-3xl xl:text-[33px] font-medium text-center text-[#ffe1be] leading-[1.4] mt-6">
+                あらゆる場面に対処できる<br>長年の経験と技術
+            </h2>
+        </div>
+    </section>
+
+    <main>
+        <section id="block-1st" class="bg-cover bg-center">
+            <div class="container mx-auto py-12 md:py-20 px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-[60px] items-start">
+                    <div class="flex flex-col">
+                        <div>
+                            <h2 class="font-serif text-[65px] text-gray-100 leading-tight">Message</h2>
+                            <p class="font-sans text-[20px] text-gray-300 mt-1">メッセージ</p>
+                        </div>
+
+                        <div class="lg:hidden my-8">
+                            <img src="./img/top__block1st_image.jpg" alt="メッセージのイメージ (スマホ)" class="w-full h-auto object-cover rounded-md shadow-md">
+                        </div>
+
+                        <div class="mt-6 lg:mt-10">
+                            <h3 class="font-sans text-[24px] font-semibold text-gray-100">音を愛し、心に寄り添う。</h3>
+                            <p class="font-sans text-base text-gray-300 mt-4 leading-relaxed">
+                                ここに和文のコメントが入ります。私たちのサービスや製品が、どのようにしてお客様の心に寄り添い、日常に彩りを与えるのか、その思いを込めてお伝えします。
+                                音楽のように、私たちの提供する価値が皆様の生活に調和をもたらすことを願っています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

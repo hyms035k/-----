@@ -1,0 +1,43 @@
+@charset "UTF-8";
+@use "msg-config" as conf;
+
+.remove {
+	position: relative;
+	overflow: hidden;
+	display: block;
+	width: 100%;
+	height: 0;
+	font-size: 0.5em;
+	text-align: left;
+	text-indent: -9999px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+main {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#hero {
+	&-section {
+		background-image: url(../img/top__hero_bg.jpg);
+		.hero {
+			&-logo {
+				width: 80%;
+				margin-left: auto;
+				margin-right: auto;
+				@include conf.mq(768) {
+					width: 46.1538461%;
+				}
+			}
+		}
+	}
+}
+
+#block {
+	&-1st {
+		background-image: url(../img/top__block1st_bg.jpg);
+	}
+}

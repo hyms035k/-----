@@ -1,0 +1,130 @@
+.remove {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  height: 0;
+  font-size: 0.5em;
+  text-align: left;
+  text-indent: -9999px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  color: #34506d;
+  text-decoration: none !important;
+  -webkit-mask: url(../img/btn_mask-min.png) center left no-repeat;
+          mask: url(../img/btn_mask-min.png) center left no-repeat;
+  -webkit-mask-size: auto 100%;
+          mask-size: auto 100%;
+  cursor: pointer;
+}
+.btn > span {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  background-color: #ffe8c9;
+  -webkit-mask: url(../img/btn_mask-min.png) center right no-repeat;
+          mask: url(../img/btn_mask-min.png) center right no-repeat;
+  -webkit-mask-size: auto 100%;
+          mask-size: auto 100%;
+}
+.btn > span:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 0;
+  background-color: #1a2530;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  content: "";
+}
+.btn > span > span {
+  position: relative;
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.btn > span > span:before, .btn > span > span:after {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #4d667f;
+  border-radius: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  content: "";
+}
+.btn > span > span:before {
+  left: 8px;
+}
+.btn > span > span:after {
+  right: 8px;
+}
+.btn:hover, .btn:focus {
+  color: #ffe8c9;
+}
+.btn:hover > span:before, .btn:focus > span:before {
+  width: 100%;
+}
+.btn.inline-block > span > span {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media screen and (min-width:768px) {
+  #hero-section {
+    background-image: url(../img/top__hero_bg.jpg);
+  }
+}
+@media screen and (max-width:767px) {
+  #hero-section {
+    background-image: url(../img/top__hero_bg_sp.jpg);
+  }
+}
+
+#block-1st {
+  background-image: url(../img/top__block1st_bg.jpg);
+}
+#block-2nd {
+  background-image: url(../img/top__block2nd_bg.jpg);
+}
+@media screen and (min-width:768px) {
+  #block-2nd .quick-tab > .btn {
+    min-width: 150px;
+  }
+}
+@media screen and (max-width:767px) {
+  #block-2nd .quick-tab > .btn {
+    width: calc((100% - 0.5rem) * 0.5);
+    max-width: 150px;
+  }
+}
+#block-2nd .quick-tab > .btn > span > span {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#block-2nd .quick-tab > .btn > span > span:before, #block-2nd .quick-tab > .btn > span > span:after {
+  width: 6px;
+  height: 6px;
+}
+#block-2nd .quick-tab > .btn > span > span:before {
+  left: 6px;
+}
+#block-2nd .quick-tab > .btn > span > span:after {
+  right: 6px;
+}
+#block-2nd .quick-tab > .btn.active {
+  color: #ffe8c9 !important;
+}
+#block-2nd .quick-tab > .btn.active > span {
+  background-color: #1a2530 !important;
+}/*# sourceMappingURL=style.css.map */

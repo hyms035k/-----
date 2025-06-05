@@ -1,0 +1,68 @@
+@charset "UTF-8";
+@use "msg-config" as conf;
+
+.remove {
+	position: relative;
+	overflow: hidden;
+	display: block;
+	width: 100%;
+	height: 0;
+	font-size: 0.5em;
+	text-align: left;
+	text-indent: -9999px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#hero {
+	&-section {
+		@include conf.mq(768) {
+			background-image: url(../img/top__hero_bg.jpg);
+		}
+		@include conf.mq(0,768) {
+			background-image: url(../img/top__hero_bg_sp.jpg);
+		}
+	}
+}
+
+#block {
+	&-1st {
+		background-image: url(../img/top__block1st_bg.jpg);
+	}
+	&-2nd {
+		background-image: url(../img/top__block2nd_bg.jpg);
+		.quick-tab {
+			> .btn {
+				max-width: 150px;
+			}
+		}
+	}
+}
+
+.btn {
+	position: relative;
+	overflow: hidden;
+	color: conf.$base;
+	mask: url(../img/btn_mask-min.png) center left no-repeat;
+	mask-size: auto 100%;
+	> span {
+		position: relative;
+		overflow: hidden;
+		display: block;
+		background-color: conf.$light;
+		mask: url(../img/btn_mask-min.png) center right no-repeat;
+		mask-size: auto 100%;
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			display: block;
+			width: 0;
+			background-color: conf.$base;
+			transition: 0.3s;
+			content: "";
+		}
+	}
+}

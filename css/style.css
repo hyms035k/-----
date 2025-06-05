@@ -127,4 +127,8 @@
 }
 #block-2nd .quick-tab > .btn.active > span {
   background-color: #1a2530 !important;
+}
+
+#about-us {
+  background-image: url(../img/top__block2nd_about.jpg);
 }/*# sourceMappingURL=style.css.map */

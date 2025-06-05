@@ -46,7 +46,18 @@
                 mix-blend-mode: overlay;
             }
             .category-banner > .border-filter {
-                @apply absolute block inset-[5px] md:inset-[10px] lg:inset-[15px] border border-white z-10;
+                @apply absolute block top-[15px] left-[15px] right-[15px] bottom-[15px] z-10;
+            }
+            .category-banner > .border-filter:before,
+            .category-banner > .border-filter:after {
+                @apply absolute block w-0 h-0 duration-300;
+                content: "";
+            }
+            .category-banner > .border-filter:before {
+                @apply top-0 left-0 border-t border-l border-white;
+            }
+            .category-banner > .border-filter:after {
+                @apply right-0 bottom-0 border-r border-b border-white;
             }
             .category-banner > .banner-label {
                 @apply absolute inset-0 z-20 flex items-center pl-6 md:pl-8 pb-10 text-white;
@@ -55,10 +66,10 @@
                 @apply block;
             }
             .category-banner > .banner-label > span > :not(.font-serif) {
-                @apply block text-sm md:text-base font-medium leading-tight mb-2;
+                @apply block font-medium leading-tight mb-2;
             }
             .category-banner > .banner-label > span > .font-serif {
-                @apply block text-[1.375rem] lg:text-3xl xl:text-[44px] leading-none tracking-wide;
+                @apply block text-3xl lg:text-4xl xl:text-[44px] leading-none tracking-wide;
             }
             .category-banner > .banner-line-6 {
                 @apply absolute block bottom-4 left-1/2 w-full -translate-x-1/2 flex flex-col gap-[3px] z-20;
@@ -94,13 +105,13 @@
                 @apply flex items-center gap-2 xl:gap-4;
             }
             #news ul > li > .meta-field > div {
-                @apply font-roboto text-xs md:text-sm whitespace-nowrap;
+                @apply font-roboto text-sm whitespace-nowrap;
             }
             #news ul > li > .meta-field > a {
-                @apply inline-block text-xs md:text-sm text-[#1a2530] hover:text-[#ffe8c9] bg-[#ffe8c9] hover:bg-[#1a2530] leading-none py-2 px-4 duration-300;
+                @apply inline-block text-sm text-[#1a2530] hover:text-[#ffe8c9] bg-[#ffe8c9] hover:bg-[#1a2530] leading-none py-2 px-4 duration-300;
             }
             #news ul > li > a {
-                @apply flex items-center text-sm md:text-base py-3 md:py-4 hover:text-white duration-300;
+                @apply flex items-center py-4 hover:text-white duration-300;
             }
             #news ul > li > a > span {
                 @apply block truncate w-[calc(100%-15px)];
@@ -151,7 +162,7 @@
                 container: {
                     center: true, // コンテナを中央揃えにする
                     padding: {
-                        DEFAULT: '1.25rem',
+                        DEFAULT: '1.75rem',
                         md: '1.5rem',
                         lg: '2rem',
                     },
@@ -379,7 +390,7 @@
                 </div>
 
                 <!-- About Kawase セクション -->
-                <div id="about-us" class="mx-[-1.25rem] md:mx-0 pt-10 pb-12 lg:block-box mt-10 text-[#ffe8c9] bg-cover bg-center px-6 md:px-0">
+                <div id="about-us" class="mx-[-1.75rem] md:mx-0 pt-10 pb-12 lg:block-box mt-10 text-[#ffe8c9] bg-cover bg-center px-6 md:px-0">
                     <h2 class="font-serif text-4xl md:text-5xl xl:text-[60px] text-center leading-tight">About Kawase</h2>
                     <div class="text-white text-justify leading-relaxed md:leading-loose mx-auto mt-6 md:w-[80%] xl:w-[60%]">カワセ楽器店は、1944年の創業以来、音楽愛好家の皆さまに高品質なアコースティックギターとサービスを提供してまいりました。​長年の経験と技術を活かし、楽器の販売から修理・メンテナンス、オリジナル商品の開発まで幅広く手がけています。​これからも音楽を愛するすべての方々に寄り添い、心に響く音楽体験をお届けしてまいります。</div>
                     <div class="text-center mt-11">
@@ -432,8 +443,8 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="md:hidden text-center mt-8">
-                            <a href="#" class="inline-block btn text-center align-middle"><span><span>詳しく見る</span></span></a>
+                        <div class="text-center">
+                            <a href="#" class="md:hidden inline-block btn text-center align-middle"><span><span>詳しく見る</span></span></a>
                         </div>
                     </div>
                 </div>
@@ -481,15 +492,15 @@
                     </a>
 
                     <!-- バナー9 -->
-                    <a href="" class="category-banner sm:col-span-2 !h-[45vw] md:!h-[200px] lg:!h-[240px] xl:!h-[283px]">
+                    <a href="" class="category-banner sm:col-span-2 !h-[35vw] md:!h-[126px] lg:!h-[170px] xl:!h-[283px]">
                         <img src="./img/top__block2nd_category_9.jpg" alt="バナー9">
                         <span class="border-filter"></span>
                         <span class="banner-label !pb-0 !pl-6 md:!pl-12">
                             <span>
                                 <span>ご購入ガイド</span>
                                 <span class="font-serif">Shopping Guide</span>
-                                <span class="text-left mt-4 md:mt-8 !mb-0">
-                                    <span class="inline-block btn text-sm md:text-base text-center align-middle"><span><span class="!py-3 md:!py-4 !px-7 md:!px-12 leading-none">詳しく見る</span></span><span class="btn-border"></span></span>
+                                <span class="text-left mt-8 !mb-0">
+                                    <span class="inline-block btn text-center align-middle"><span><span>詳しく見る</span></span><span class="btn-border"></span></span>
                                 </span>
                             </span>
                         </span>
@@ -535,7 +546,27 @@
                         </span>
                     </a>
                 </div>
-
+                <div class="lg:grid lg:grid-cols-2 lg:gap-[60px] items-center pt-10 md:pt-20 xl:pt-[8rem]">
+                    <div class="flex flex-col">
+                        <div class="md:flex md:items-baseline md:gap-x-4">
+                            <h2 class="font-serif text-4xl lg:text-[65px] leading-tight">Message</h2>
+                            <p class="font-sans lg:text-[20px] mt-1">メッセージ</p>
+                        </div>
+                        <div class="lg:hidden my-5">
+                            <img src="./img/top__block1st_image.jpg" alt="メッセージのイメージ (スマホ)" class="w-full h-auto object-cover">
+                        </div>
+                        <div class="lg:mt-10">
+                            <h3 class="font-sans text-[1.3rem] lg:text-[24px] font-medium">音を愛し、心に寄り添う。</h3>
+                            <p class="font-sans text-base mt-4 leading-relaxed">
+                                ここに和文のコメントが入ります。私たちのサービスや製品が、どのようにしてお客様の心に寄り添い、日常に彩りを与えるのか、その思いを込めてお伝えします。
+                                音楽のように、私たちの提供する価値が皆様の生活に調和をもたらすことを願っています。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden lg:flex items-center justify-center">
+                        <img src="./img/top__block1st_image.jpg" alt="メッセージのイメージ (PC)" class="w-full max-w-md h-auto object-cover">
+                    </div>
+                </div>
             </div>
         </section>
     </main>

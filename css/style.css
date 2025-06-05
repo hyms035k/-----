@@ -122,6 +122,32 @@
 }
 
 @media screen and (min-width:768px) {
+  .quick-tab > .btn {
+    min-width: 150px;
+  }
+}
+@media screen and (max-width:767px) {
+  .quick-tab > .btn {
+    width: calc((100% - 0.5rem) * 0.5);
+    max-width: 150px;
+  }
+}
+.quick-tab > .btn > span > span {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.quick-tab > .btn > span > span:before, .quick-tab > .btn > span > span:after {
+  width: 6px;
+  height: 6px;
+}
+.quick-tab > .btn > span > span:before {
+  left: 6px;
+}
+.quick-tab > .btn > span > span:after {
+  right: 6px;
+}
+
+@media screen and (min-width:768px) {
   #hero-section {
     background-image: url(../img/top__hero_bg.jpg);
   }
@@ -138,31 +164,6 @@
 #block-2nd {
   background-image: url(../img/top__block2nd_bg.jpg);
 }
-@media screen and (min-width:768px) {
-  #block-2nd .quick-tab > .btn {
-    min-width: 150px;
-  }
-}
-@media screen and (max-width:767px) {
-  #block-2nd .quick-tab > .btn {
-    width: calc((100% - 0.5rem) * 0.5);
-    max-width: 150px;
-  }
-}
-#block-2nd .quick-tab > .btn > span > span {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-#block-2nd .quick-tab > .btn > span > span:before, #block-2nd .quick-tab > .btn > span > span:after {
-  width: 6px;
-  height: 6px;
-}
-#block-2nd .quick-tab > .btn > span > span:before {
-  left: 6px;
-}
-#block-2nd .quick-tab > .btn > span > span:after {
-  right: 6px;
-}
 #block-2nd .quick-tab > .btn.active {
   color: #ffe8c9 !important;
 }
@@ -172,4 +173,11 @@
 
 #about-us {
   background-image: url(../img/top__block2nd_about.jpg);
+}
+
+.category-banner:has(.btn-border):hover .btn > span:not(.btn-border):before, .category-banner:has(.btn-border):focus .btn > span:not(.btn-border):before {
+  width: 100% !important;
+}
+.category-banner:has(.btn-border):not(:hover):not(:focus) .btn > span:not(.btn-border):before {
+  width: 0 !important;
 }/*# sourceMappingURL=style.css.map */

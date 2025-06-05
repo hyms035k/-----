@@ -191,10 +191,8 @@
 		&:hover, &:focus {
 			.btn {
 				> span {
-					&:not(.btn-border) {
-						&:before {
-							width: 100% !important;
-						}
+					&:before {
+						width: 100% !important;
 					}
 				}
 			}
@@ -202,10 +200,8 @@
 		&:not(:hover):not(:focus) {
 			.btn {
 				> span {
-					&:not(.btn-border) {
-						&:before {
-							width: 0 !important;
-						}
+					&:before {
+						width: 0 !important;
 					}
 				}
 			}

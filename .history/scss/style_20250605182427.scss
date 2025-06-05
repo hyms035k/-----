@@ -185,30 +185,3 @@
 #about-us {
 	background-image: url(../img/top__block2nd_about.jpg);
 }
-
-.category-banner {
-	&:has(.btn-border){
-		&:hover, &:focus {
-			.btn {
-				> span {
-					&:not(.btn-border) {
-						&:before {
-							width: 100% !important;
-						}
-					}
-				}
-			}
-		}
-		&:not(:hover):not(:focus) {
-			.btn {
-				> span {
-					&:not(.btn-border) {
-						&:before {
-							width: 0 !important;
-						}
-					}
-				}
-			}
-		}
-	}
-}

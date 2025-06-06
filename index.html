@@ -24,66 +24,162 @@
     <style type="text/tailwindcss">
         @layer components {
             .container {
-                @apply relative;
+                @apply
+                    relative;
             }
             .block-box {
-                @apply py-10 md:py-20 xl:py-32;
+                @apply
+                    py-10 md:py-20 xl:py-32;
+            }
+            #hamburger-toggle.open #icon-menu span:nth-child(1) {
+                @apply
+                    rotate-[30deg]
+                    translate-y-[10px];
+            }
+            #hamburger-toggle.open #icon-menu span:nth-child(2) {
+                @apply
+                    opacity-0;
+            }
+            #hamburger-toggle.open #icon-menu span:nth-child(3) {
+                @apply
+                    rotate-[-30deg]
+                    -translate-y-[10px];
+            }
+            #hamburger-toggle #icon-menu span {
+                @apply
+                    transition-all
+                    duration-300;
             }
         }
         @layer utilities {
             .scrolled::before {
-                @apply backdrop-blur-lg bg-black/15;
+                @apply
+                    backdrop-blur-lg
+                    bg-black/15;
+            }
+            .opened {
+                @apply
+                    bg-black/80;
             }
             .outside-double-border {
-                @apply flex items-center mx-auto md:w-36 lg:w-48 xl:w-64;
+                @apply
+                    flex
+                    items-cente
+                    mx-auto
+                    md:w-36 lg:w-48 xl:w-64;
             }
             .outside-double-border:before,
             .outside-double-border:after {
-                @apply block flex-grow border-t lg:border-t-2 border-[#ffe8c9] border-b lg:border-b-2 border-[#ffe8c9] h-[5px] lg:h-[8px];
-                content: "";
+                @apply
+                    block
+                    flex-grow
+                    border-t lg:border-t-2
+                    border-b lg:border-b-2
+                    border-[#ffe8c9]
+                    h-[5px] lg:h-[8px]
+                    content-[''];
             }
             .outside-double-border:before {
-                @apply mr-1;
+                @apply
+                    mr-1;
             }
             .outside-double-border:after {
-                @apply ml-1;
+                @apply
+                    ml-1;
             }
             .category-banner {
-                @apply relative block h-[35vw] md:h-[126px] lg:h-[170px] xl:h-[238px];
+                @apply
+                    relative
+                    block
+                    h-[35vw] md:h-[126px] lg:h-[170px] xl:h-[238px];
             }
             .category-banner > img {
-                @apply absolute inset-0 w-full h-full object-cover z-0;
+                @apply
+                    absolute
+                    inset-0
+                    w-full
+                    h-full
+                    object-cover
+                    z-0;
             }
             .category-banner > .overlay-filter {
-                @apply absolute block top-0 left-0 h-full z-10;
-                width: 22.6765799%;
-                background-color: #444140;
-                mix-blend-mode: overlay;
+                @apply
+                    absolute
+                    block
+                    top-0
+                    left-0
+                    w-[22.6765799%]
+                    h-full
+                    bg-[#444140]
+                    mix-brend-overlay
+                    z-10;
             }
             .category-banner > .border-filter {
-                @apply absolute block inset-[5px] md:inset-[10px] lg:inset-[15px] border border-white z-10;
+                @apply
+                    absolute
+                    block
+                    inset-[5px] md:inset-[10px] lg:inset-[15px]
+                    border
+                    border-white
+                    z-10;
             }
             .category-banner > .banner-label {
-                @apply absolute inset-0 z-20 flex items-center pl-6 md:pl-8 pb-10 text-white;
+                @apply
+                    absolute
+                    inset-0
+                    flex
+                    items-center
+                    pl-6 md:pl-8
+                    pb-10
+                    text-white
+                    z-20;
             }
             .category-banner > .banner-label > span {
-                @apply block;
+                @apply
+                    block;
             }
             .category-banner > .banner-label > span > :not(.font-serif) {
-                @apply block text-sm md:text-base font-medium leading-tight mb-2;
+                @apply
+                    block
+                    font-medium
+                    text-sm md:text-base
+                    leading-tight
+                    mb-2;
             }
             .category-banner > .banner-label > span > .font-serif {
-                @apply block text-[1.375rem] lg:text-3xl xl:text-[44px] leading-none tracking-wide;
+                @apply
+                    block
+                    text-[1.375rem] lg:text-3xl xl:text-[44px]
+                    leading-none
+                    tracking-wide;
             }
             .category-banner > .banner-line-6 {
-                @apply absolute block bottom-4 left-1/2 w-full -translate-x-1/2 flex flex-col gap-[3px] z-20;
-                opacity: 0.75;
+                @apply
+                    absolute
+                    bottom-4
+                    left-1/2
+                    w-full
+                    -translate-x-1/2
+                    flex
+                    flex-col
+                    gap-[3px]
+                    z-20
+                    opacity-75;
             }
             .category-banner > .banner-line-6 > span {
-                @apply block h-[1px] bg-white;
+                @apply
+                    block
+                    h-[1px]
+                    bg-white;
             }
             #news ul > li {
-                @apply relative overflow-hidden border-b border-[#ffe8c9] pt-8 pb-4;
+                @apply
+                    relative
+                    overflow-hidden
+                    border-b
+                    border-[#ffe8c9]
+                    pt-8
+                    pb-4;
             }
             /*
             #news ul > li:before {
@@ -103,61 +199,165 @@
             }
             */
             #news ul > li > * {
-                @apply relative;
+                @apply
+                    relative;
             }
             #news ul > li > .meta-field {
-                @apply flex items-center gap-2 xl:gap-4;
+                @apply
+                    flex
+                    items-center
+                    gap-2 xl:gap-4;
             }
             #news ul > li > .meta-field > div {
-                @apply font-roboto text-xs md:text-sm whitespace-nowrap;
+                @apply
+                    font-roboto
+                    text-xs md:text-sm
+                    whitespace-nowrap;
             }
             #news ul > li > .meta-field > a {
-                @apply inline-block text-xs md:text-sm text-[#1a2530] hover:text-[#ffe8c9] bg-[#ffe8c9] hover:bg-[#1a2530] leading-none py-2 px-4 duration-300;
+                @apply
+                    inline-block
+                    text-xs md:text-sm text-[#1a2530]
+                    hover:text-[#ffe8c9]
+                    bg-[#ffe8c9]
+                    hover:bg-[#1a2530]
+                    leading-none
+                    py-2
+                    px-4
+                    duration-300;
             }
             #news ul > li > a {
-                @apply flex items-center text-sm md:text-base py-3 md:py-4 hover:text-white duration-300;
+                @apply
+                    flex
+                    items-center
+                    text-sm md:text-base
+                    py-3 md:py-4
+                    hover:text-white
+                    duration-300;
             }
             #news ul > li > a > span {
-                @apply block truncate w-[calc(100%-15px)];
+                @apply
+                    block
+                    truncate
+                    w-[calc(100%-15px)];
             }
             #news ul > li > a > code {
-                @apply w-[15px] text-center leading-none;
+                @apply
+                    w-[15px]
+                    text-center
+                    leading-none;
+            }
+            .header-menu {
+                @apply
+                    absolute xl:relative
+                    top-0 xl:top-auto
+                    left-0 xl:left-auto
+                    w-full xl:w-auto
+                    overflow-hidden xl:overflow-visible
+                    pt-[65px] md:pt-[90px] xl:pt-0
+                    px-6 xl:px-0
+                    bg-transparent xl:!bg-transparent
+                    h-0 xl:!h-auto
+                    ease-linear
+                    duration-300
+                    xl:flex
+                    justify-center
+                    items-center
+                    gap-x-7
+                    font-mplus;
             }
             .header-menu > li {
-                @apply relative;
+                @apply
+                    relative;
+            }
+            .header-menu > li + li {
+                @apply
+                    border-t
+                    border-white/50
+                    xl:border-t-0;
             }
             .header-menu > li > a {
-                @apply block text-white whitespace-nowrap py-3;
+                @apply
+                    block
+                    text-white
+                    whitespace-nowrap
+                    py-3;
             }
             .header-menu > li > a > span {
-                @apply text-sm;
+                @apply
+                    text-sm;
             }
             .header-menu > li > a:has(code) {
-                @apply flex gap-x-3;
+                @apply
+                    flex
+                    justify-between
+                    xl:justify-start
+                    xl:gap-x-3;
             }
             .header-menu > li > a > code {
-                @apply text-[#0071be] font-bold rotate-90 transition-transform duration-300 group-hover:rotate-[-90deg];
+                @apply
+                    text-[#0071be]
+                    font-bold
+                    rotate-90
+                    transition-transform
+                    duration-300;
             }
             .header-menu > li.group > div {
-                @apply absolute top-full left-0 min-w-full mt-[-3px] z-10 overflow-hidden max-h-0 transition-[max-height] ease-linear duration-500;
+                @apply
+                    relative xl:absolute
+                    xl:top-full
+                    xl:left-0
+                    xl:min-w-full
+                    z-10
+                    overflow-hidden
+                    max-h-0
+                    transition-[max-height]
+                    duration-500 xl:duration-300
+                    ease-linear;
             }
             .header-menu > li.group > div > ul {
-                @apply text-sm leading-relaxed whitespace-nowrap bg-white py-1 px-4 z-10;
+                @apply
+                    text-sm
+                    leading-relaxed
+                    whitespace-nowrap
+                    xl:bg-white
+                    pb-4
+                    xl:py-1
+                    xl:px-4
+                    z-10
+                    border-t xl:border-t-0
+                    border-dotted
+                    border-white/50;
             }
             .header-menu > li.group > div > ul > li + li {
-                @apply border-t border-dotted border-[#999];
+                @apply
+                    border-t
+                    border-dotted
+                    border-white/50
+                    xl:border-[#999];
             }
             .header-menu > li.group > div > ul > li > a {
-                @apply text-[#0071be] block p-2;
+                @apply
+                    text-white
+                    xl:text-[#0071be]
+                    block
+                    p-2;
             }
             .footer-link > ul > li > ul {
-                @apply pl-2 mt-1;
+                @apply
+                    pl-2
+                    mt-1;
             }
             .footer-link > ul > li > ul > li {
-                @apply flex items-center gap-x-1;
+                @apply
+                    flex
+                    items-center
+                    gap-x-1;
             }
             .footer-link > ul > li > ul > li > code {
-                @apply text-sm mt-[0.05rem];
+                @apply
+                    text-sm
+                    mt-[0.05rem];
             }
             @screen md {
                 .leading-relaxed {
@@ -241,13 +441,13 @@
 <body class="font-sans antialiased text-[#1a2530] bg-[#1a2530] tracking-wider">
 
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 before:content-[''] before:absolute before:inset-0 before:pointer-events-none before:transition-all before:duration-1000">
-        <div class="container">
-            <div class="flex justify-between items-center py-3">
-                <h1 class="w-[138px]"><a href="" class="block"><img src="./img/logo-min.png" alt="" class="transition filter hover:brightness-150 duration-300"></a></h1>
-                <ul class="header-menu flex justify-center items-center gap-x-7 font-mplus">
-                    <li class="group">
-                        <a href=""><span>ギター</span><code>&gt;</code></a>
-                        <div class="group-hover:max-h-96">
+        <div class="w-full mx-auto px-[1.25rem] md:px-[15px] xl:max-w-[1070px] 2xl:max-w-[1200px]">
+            <div class="flex justify-between items-center py-3 gap-x-8 xl:gap-x-0">
+                <h1 class="w-[70px] md:w-[100px] xl:w-[138px] z-20"><a href="" class="block"><img src="./img/logo-min.png" alt="" class="transition filter hover:brightness-150 duration-300"></a></h1>
+                <ul id="mobile-menu" class="header-menu">
+                    <li class="dropdown-toggle group">
+                        <a href=""><span>ギター</span><code class="group-[.is-open]:rotate-[-90deg] xl:group-hover:rotate-[-90deg]">&gt;</code></a>
+                        <div class="group-[.is-open]:max-h-96 xl:group-hover:max-h-96">
                             <ul>
                                 <li><a href="">サブメニュー</a></li>
                                 <li><a href="">サブメニュー</a></li>
@@ -256,9 +456,9 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="group">
-                        <a href=""><span>アクセサリ</span><code>&gt;</code></a>
-                        <div class="group-hover:max-h-96">
+                    <li class="dropdown-toggle group">
+                        <a href=""><span>アクセサリ</span><code class="group-[.is-open]:rotate-[-90deg] xl:group-hover:rotate-[-90deg]">&gt;</code></a>
+                        <div class="group-[.is-open]:max-h-96 xl:group-hover:max-h-96">
                             <ul>
                                 <li><a href="">サブメニュー</a></li>
                                 <li><a href="">サブメニュー</a></li>
@@ -267,9 +467,9 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="group">
-                        <a href=""><span>弦</span><code>&gt;</code></a>
-                        <div class="group-hover:max-h-96">
+                    <li class="dropdown-toggle group">
+                        <a href=""><span>弦</span><code class="group-[.is-open]:rotate-[-90deg] xl:group-hover:rotate-[-90deg]">&gt;</code></a>
+                        <div class="group-[.is-open]:max-h-96 xl:group-hover:max-h-96">
                             <ul>
                                 <li><a href="">サブメニュー</a></li>
                                 <li><a href="">サブメニュー</a></li>
@@ -278,9 +478,9 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="group">
-                        <a href=""><span>オリジナル</span><code>&gt;</code></a>
-                        <div class="group-hover:max-h-96">
+                    <li class="dropdown-toggle group">
+                        <a href=""><span>オリジナル</span><code class="group-[.is-open]:rotate-[-90deg] xl:group-hover:rotate-[-90deg]">&gt;</code></a>
+                        <div class="group-[.is-open]:max-h-96 xl:group-hover:max-h-96">
                             <ul>
                                 <li><a href="">サブメニュー</a></li>
                                 <li><a href="">サブメニュー</a></li>
@@ -289,9 +489,9 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="group">
-                        <a href=""><span>ショッピングガイド</span><code>&gt;</code></a>
-                        <div class="group-hover:max-h-96">
+                    <li class="dropdown-toggle group">
+                        <a href=""><span>ショッピングガイド</span><code class="group-[.is-open]:rotate-[-90deg] xl:group-hover:rotate-[-90deg]">&gt;</code></a>
+                        <div class="group-[.is-open]:max-h-96 xl:group-hover:max-h-96">
                             <ul>
                                 <li><a href="">サブメニュー</a></li>
                                 <li><a href="">サブメニュー</a></li>
@@ -300,9 +500,9 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="group">
-                        <a href=""><span>KAWASEについて</span><code>&gt;</code></a>
-                        <div class="group-hover:max-h-96">
+                    <li class="dropdown-toggle group">
+                        <a href=""><span>KAWASEについて</span><code class="group-[.is-open]:rotate-[-90deg] xl:group-hover:rotate-[-90deg]">&gt;</code></a>
+                        <div class="group-[.is-open]:max-h-96 xl:group-hover:max-h-96">
                             <ul>
                                 <li><a href="">サブメニュー</a></li>
                                 <li><a href="">サブメニュー</a></li>
@@ -312,11 +512,19 @@
                         </div>
                     </li>
                 </ul>
-                <ul class="flex items-center gap-x-6">
-                    <li class="w-[23px]"><a href="" class="block"><img src="./img/icon_search.svg" alt=""></a></li>
-                    <li class="w-[23px]"><a href="" class="block"><img src="./img/icon_user.svg" alt=""></a></li>
-                    <li class="w-[23px]"><a href="" class="block"><img src="./img/icon_cart.svg" alt=""></a></li>
+                <ul class="flex items-center grow xl:grow-0 justify-end gap-x-6 z-20">
+                    <li class="w-[20px] md:w-[23px]"><a href="" class="block"><img src="./img/icon_search.svg" alt=""></a></li>
+                    <li class="w-[20px] md:w-[23px]"><a href="" class="block"><img src="./img/icon_user.svg" alt=""></a></li>
+                    <li class="w-[20px] md:w-[23px]"><a href="" class="block"><img src="./img/icon_cart.svg" alt=""></a></li>
                 </ul>
+                <button id="hamburger-toggle" class="xl:hidden w-8 h-8 z-20">
+                    <span class="sr-only">メニューを開閉</span>
+                    <div id="icon-menu" class="space-y-2">
+                        <span class="block w-full h-0.5 bg-white"></span>
+                        <span class="block w-full h-0.5 bg-white"></span>
+                        <span class="block w-full h-0.5 bg-white"></span>
+                    </div>
+                </button>
             </div>
         </div>
     </header>

@@ -93,7 +93,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 95%;
+  width: 90%;
   background-color: #fff;
   -webkit-mask-image: url(../img/btn_border_mask-min.png);
           mask-image: url(../img/btn_border_mask-min.png);
@@ -147,32 +147,11 @@
   right: 6px;
 }
 
-@media screen and (min-width:768px) {
-  #hero-section {
-    background-image: url(../img/top__hero_bg.jpg);
-  }
-}
-@media screen and (max-width:767px) {
-  #hero-section {
-    background-image: url(../img/top__hero_bg_sp.jpg);
-  }
-}
-
-#block-1st {
-  background-image: url(../img/top__block1st_bg.jpg);
-}
-#block-2nd {
-  background-image: url(../img/top__block2nd_bg.jpg);
-}
 #block-2nd .quick-tab > .btn.active {
   color: #ffe8c9 !important;
 }
 #block-2nd .quick-tab > .btn.active > span {
   background-color: #1a2530 !important;
-}
-
-#about-us {
-  background-image: url(../img/top__block2nd_about.jpg);
 }
 
 .category-banner:has(.btn-border):hover .btn > span:not(.btn-border):before, .category-banner:has(.btn-border):focus .btn > span:not(.btn-border):before {

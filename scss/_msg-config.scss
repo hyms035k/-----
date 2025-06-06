@@ -6,8 +6,6 @@ $light: #ffe8c9;
 $navy: #34506d;
 $navy-light: #4d667f;
 
-$test: #000;
-
 @mixin mq($min:0, $max:0, $mode:'screen') {
 	$bp_min: '';
 	$bp_max: '';

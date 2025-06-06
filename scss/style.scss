@@ -93,7 +93,7 @@
 			position: absolute;
 			top: 0;
 			bottom: 0;
-			width: calc(100% - 5%);
+			width: 90%;
 			background-color: #fff;
 			mask-image: url(../img/btn_border_mask-min.png);
 			mask-repeat: no-repeat;
@@ -152,23 +152,8 @@
 	}
 }
 
-#hero {
-	&-section {
-		@include conf.mq(768) {
-			background-image: url(../img/top__hero_bg.jpg);
-		}
-		@include conf.mq(0,768) {
-			background-image: url(../img/top__hero_bg_sp.jpg);
-		}
-	}
-}
-
 #block {
-	&-1st {
-		background-image: url(../img/top__block1st_bg.jpg);
-	}
 	&-2nd {
-		background-image: url(../img/top__block2nd_bg.jpg);
 		.quick-tab {
 			> .btn {
 				&.active {
@@ -182,13 +167,6 @@
 	}
 }
 
-#about-us {
-	background-image: url(../img/top__block2nd_about.jpg);
-}
-
-.test{
-	
-}
 .category-banner {
 	&:has(.btn-border){
 		&:hover, &:focus {

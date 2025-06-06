@@ -12,6 +12,15 @@
         // ここでテーマのカスタマイズなどが可能ですが、まずはデフォルトで進めます。
         // 例: tailwind.config = { theme: { extend: { colors: { 'custom-blue': '#243c5a' } } } }
     </script>
+
+    <!-- GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap" rel="stylesheet">
+
     <style type="text/tailwindcss">
         @layer components {
             .block-box {
@@ -108,6 +117,42 @@
             #news ul > li > a > code {
                 @apply w-[15px] text-center leading-none;
             }
+            .header-menu > li {
+                @apply relative;
+            }
+            .header-menu > li > a {
+                @apply block text-white whitespace-nowrap py-3;
+            }
+            .header-menu > li > a > span {
+                @apply text-sm;
+            }
+            .header-menu > li > a:has(code) {
+                @apply flex gap-x-3;
+            }
+            .header-menu > li > a > code {
+                @apply text-[#0071be] font-bold rotate-90 transition-transform duration-300 group-hover:rotate-[-90deg];
+            }
+            .header-menu > li.group > div {
+                @apply absolute top-full left-0 min-w-full mt-[-3px] z-10 overflow-hidden max-h-0 transition-[max-height] ease-linear duration-500;
+            }
+            .header-menu > li.group > div > ul {
+                @apply text-sm leading-relaxed whitespace-nowrap bg-white py-1 px-4 z-10;
+            }
+            .header-menu > li.group > div > ul > li + li {
+                @apply border-t border-dotted border-[#999];
+            }
+            .header-menu > li.group > div > ul > li > a {
+                @apply text-[#0071be] block p-2;
+            }
+            .footer-link > ul > li > ul {
+                @apply pl-2 mt-1;
+            }
+            .footer-link > ul > li > ul > li {
+                @apply flex items-center gap-x-1;
+            }
+            .footer-link > ul > li > ul > li > code {
+                @apply text-sm mt-[0.05rem];
+            }
             @screen md {
                 .leading-relaxed {
                     line-height: 1.84;
@@ -135,7 +180,7 @@
         @screen 2xl {
             .container {
                 /* 1367px以上でコンテナのmax-widthは1170px */
-                @apply max-w-[1170px];
+                @apply max-w-[1200px];
             }
         }
     </style>
@@ -156,8 +201,7 @@
                     center: true, // コンテナを中央揃えにする
                     padding: {
                         DEFAULT: '1.25rem',
-                        md: '1.5rem',
-                        lg: '2rem',
+                        md: '15px'
                     },
                     screens: {
                         sm: '640px',
@@ -170,32 +214,109 @@
                 extend: {
                     fontFamily: {
                         // デフォルトのサンセリフフォントを Kiwi Maru に設定
-                        sans: ['Kiwi Maru', 'Inter', 'sans-serif'],
+                        sans: ['"Kiwi Maru"', 'sans-serif'],
                         // 見出し等で使用するセリフフォントとして Bree Serif を設定
-                        serif: ['Bree Serif', 'serif'],
-                        roboto: ['roboto', 'serif'],
+                        serif: ['"Bree Serif"', 'serif'],
+                        roboto: ['"roboto"', 'serif'],
+                        mplus: ['"M PLUS 1"', 'sans-serif']
                     },
                 }
             }
         }
     </script>
 
-    <!-- GoogleFonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
     <!-- Interフォントの読み込み (Tailwind CSSのデフォルトフォントファミリーと相性が良い) -->
+    <!--
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    -->
 
     <link href="./css/style.min.css" rel="stylesheet">
 </head>
-<body class="font-sans antialiased text-[#1a2530] bg-[#1a2530]">
+<body class="font-sans antialiased text-[#1a2530] bg-[#1a2530] tracking-wider">
+
+    <header class="fixed top-0 left-0 w-full z-50">
+        <div class="container">
+            <div class="flex justify-between items-center">
+                <h1 class="w-[138px]"><img src="./img/logo-min.png" alt=""></h1>
+                <ul class="header-menu flex justify-center items-center gap-x-7 font-mplus">
+                    <li class="group">
+                        <a href=""><span>ギター</span><code>&gt;</code></a>
+                        <div class="group-hover:max-h-96">
+                            <ul>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="group">
+                        <a href=""><span>アクセサリ</span><code>&gt;</code></a>
+                        <div class="group-hover:max-h-96">
+                            <ul>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="group">
+                        <a href=""><span>弦</span><code>&gt;</code></a>
+                        <div class="group-hover:max-h-96">
+                            <ul>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="group">
+                        <a href=""><span>オリジナル</span><code>&gt;</code></a>
+                        <div class="group-hover:max-h-96">
+                            <ul>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="group">
+                        <a href=""><span>ショッピングガイド</span><code>&gt;</code></a>
+                        <div class="group-hover:max-h-96">
+                            <ul>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="group">
+                        <a href=""><span>KAWASEについて</span><code>&gt;</code></a>
+                        <div class="group-hover:max-h-96">
+                            <ul>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="flex items-center gap-x-6">
+                    <li class="w-[23px]"><a href="" class="block"><img src="./img/icon_search.svg" alt=""></a></li>
+                    <li class="w-[23px]"><a href="" class="block"><img src="./img/icon_user.svg" alt=""></a></li>
+                    <li class="w-[23px]"><a href="" class="block"><img src="./img/icon_cart.svg" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
 
     <!-- ヒーローセクション -->
-    <section id="hero-section" class="h-screen md:h-[56.25vw] lg:h-screen flex flex-col items-center justify-center bg-cover bg-center text-white" aria-labelledby="hero-heading">
+    <section id="hero-section" class="bg-[url('./img/top__hero_bg_sp.jpg')] md:bg-[url('./img/top__hero_bg.jpg')] h-screen md:h-[56.25vw] lg:h-screen flex flex-col items-center justify-center bg-cover bg-center text-white" aria-labelledby="hero-heading">
         <div class="container h-full flex flex-col items-center justify-center">
             <!-- ロゴのプレースホルダー -->
             <h1 class="hero-logo w-[80%] md:w-[46.1538461%] mx-auto"><img src="./img/top__hero_logo-min.png" alt=""></h1>
@@ -206,7 +327,7 @@
     </section>
 
     <main class="px-2 md:px-[30px]">
-        <section id="block-1st" class="bg-cover bg-center">
+        <section id="block-1st" class="bg-[url('./img/top__block1st_bg.jpg')] bg-cover bg-center">
             <div class="container block-box">
                 <div class="md:grid md:grid-cols-2 md:gap-[30px] lg:gap-[60px] items-center">
                     <div class="flex flex-col">
@@ -232,7 +353,7 @@
             </div>
         </section>
 
-        <section id="block-2nd" class="bg-cover bg-top">
+        <section id="block-2nd" class="bg-[url('./img/top__block2nd_bg.jpg')] bg-cover bg-top">
             <div class="container block-box pt-0">
 
                 <!-- おすすめ商品 / Topics -->
@@ -383,7 +504,7 @@
                 </div>
 
                 <!-- About Kawase セクション -->
-                <div id="about-us" class="mx-[-1.25rem] md:mx-0 pt-10 pb-12 lg:block-box mt-10 text-[#ffe8c9] bg-cover bg-center px-6 md:px-0">
+                <div id="about-us" class="bg-[url('./img/top__block2nd_about.jpg')] mx-[-1.25rem] md:mx-0 pt-10 pb-12 lg:block-box mt-10 text-[#ffe8c9] bg-cover bg-center px-6 md:px-0">
                     <h2 class="font-serif text-4xl md:text-5xl xl:text-[60px] text-center leading-tight">About Kawase</h2>
                     <div class="text-white text-justify leading-relaxed md:leading-loose mx-auto mt-6 md:w-[80%] xl:w-[60%]">カワセ楽器店は、1944年の創業以来、音楽愛好家の皆さまに高品質なアコースティックギターとサービスを提供してまいりました。​長年の経験と技術を活かし、楽器の販売から修理・メンテナンス、オリジナル商品の開発まで幅広く手がけています。​これからも音楽を愛するすべての方々に寄り添い、心に響く音楽体験をお届けしてまいります。</div>
                     <div class="text-center mt-11">
@@ -544,9 +665,64 @@
         </section>
     </main>
 
-    <footer>
-        <div class="text-sm md:text-white leading-loose md:leading-relaxed"></div>
+    <footer class="text-white px-2 md:px-[30px]">
+        <div class="bg-[url(./img/footer_bg.jpg)] bg-cover bg-center w-full block-box">
+            <div class="container">
+                <div class="lg:flex justify-between items-start">
+                    <div class="lg:basis-4/12 text-center lg:text-left">
+                        <a href="" class="block w-36 md:w-[190px] mx-auto lg:mx-0">
+                            <img src="./img/logo-min.png" alt="Kawase Gakki Logo">
+                        </a>
+                        <div class="mt-6 leading-relaxed">
+                            株式会社カワセ楽器<br><span class="text-sm">東京都千代田区神田小川町2-4</span>
+                        </div>
+                        <div class="mt-3 leading-relaxed text-sm">
+                            <a href="tel:0332912723">03-3291-2723</a>
+                        </div>
+                        <div class="mt-3 leading-relaxed text-sm">
+                            営業時間:10:00~19:00 (18:00日祝)<br>水曜定休(祝日と重なる場合は営業)
+                        </div>
+                        <div class="mt-8 text-center lg:text-left">
+                            <a href="#" class="inline-block btn text-center align-middle"><span><span class="!py-4 !px-7 md:!px-12 leading-none">詳しく見る</span></span><span class="btn-border"></span></a>
+                        </div>
+                    </div>
+
+                    <!-- ナビゲーションリンク -->
+                    <div class="footer-link flex flex-wrap md:flex-nowrap md:justify-center md:justify-end gap-x-5 md:gap-x-12 !leading-loose whitespace-nowrap text-xs md:text-base mt-8 md:md-0">
+                        <ul class="grow md:grow-0">
+                            <li>
+                                <a href="#" class="hover:underline">商品一覧</a>
+                                <ul>
+                                    <li><code>&gt;</code><a href="#" class="hover:underline">ギター</a></li>
+                                    <li><code>&gt;</code><a href="#" class="hover:underline">アクセサリ</a></li>
+                                    <li><code>&gt;</code><a href="#" class="hover:underline">弦</a></li>
+                                    <li><code>&gt;</code><a href="#" class="hover:underline">オリジナル</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="grow md:grow-0">
+                            <li><a href="#" class="hover:underline">会社情報</a></li>
+                            <li><a href="#" class="hover:underline">直営店情報</a></li>
+                            <li><a href="#" class="hover:underline">KAWASEの想い</a></li>
+                        </ul>
+                        <ul class="w-full md:w-auto mt-3 md:mt-0 columns-2 md:columns-1">
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">買物ガイド</a></li>
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">特定商取引法</a></li>
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">保証規定</a></li>
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">メンテナンス情報</a></li>
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">新規会員登録</a></li>
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">ログイン</a></li>
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">カート</a></li>
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- コピーライト -->
+    <div class="w-full bg-[#1a2530] py-6 font-serif text-sm text-white text-center leading-tight">&copy;2025 KAWASE</div>
 
 </body>
 </html>

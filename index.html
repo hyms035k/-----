@@ -23,11 +23,17 @@
 
     <style type="text/tailwindcss">
         @layer components {
+            .container {
+                @apply relative;
+            }
             .block-box {
                 @apply py-10 md:py-20 xl:py-32;
             }
         }
         @layer utilities {
+            .scrolled::before {
+                @apply backdrop-blur-lg bg-black/15;
+            }
             .outside-double-border {
                 @apply flex items-center mx-auto md:w-36 lg:w-48 xl:w-64;
             }
@@ -234,10 +240,10 @@
 </head>
 <body class="font-sans antialiased text-[#1a2530] bg-[#1a2530] tracking-wider">
 
-    <header class="fixed top-0 left-0 w-full z-50">
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 before:content-[''] before:absolute before:inset-0 before:pointer-events-none before:transition-all before:duration-1000">
         <div class="container">
-            <div class="flex justify-between items-center">
-                <h1 class="w-[138px]"><img src="./img/logo-min.png" alt=""></h1>
+            <div class="flex justify-between items-center py-3">
+                <h1 class="w-[138px]"><a href="" class="block"><img src="./img/logo-min.png" alt="" class="transition filter hover:brightness-150 duration-300"></a></h1>
                 <ul class="header-menu flex justify-center items-center gap-x-7 font-mplus">
                     <li class="group">
                         <a href=""><span>ギター</span><code>&gt;</code></a>
@@ -724,5 +730,6 @@
     <!-- コピーライト -->
     <div class="w-full bg-[#1a2530] py-6 font-serif text-sm text-white text-center leading-tight">&copy;2025 KAWASE</div>
 
+    <script src="./js/script.min.js"></script>
 </body>
 </html>

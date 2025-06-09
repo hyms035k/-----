@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@use "msg-config" as conf;
+
+.footer-link {
+	> ul {
+		> li {
+			> ul {
+				padding-left: 0.5rem;
+				margin-top: 0.25rem;
+				> li {
+					display: flex;
+					align-items: center;
+					column-gap: 0.25rem;
+					> code {
+						font-size: 0.875em;
+						margin-top: 0.05rem;
+					}
+				}
+			}
+		}
+	}
+}

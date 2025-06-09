@@ -1,0 +1,243 @@
+@charset "UTF-8";
+@use "msg-config" as conf;
+
+.btn {
+	position: relative;
+	overflow: hidden;
+	color: conf.$navy;
+	text-decoration: none !important;
+	mask: url(../img/btn_mask-min.png) center left no-repeat;
+	mask-size: auto 100%;
+	cursor: pointer;
+	> span {
+		&:not(.btn-border) {
+			position: relative;
+			overflow: hidden;
+			display: block;
+			background-color: conf.$light;
+			mask: url(../img/btn_mask-min.png) center right no-repeat;
+			mask-size: auto 100%;
+			&:before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				display: block;
+				width: 0;
+				background-color: conf.$base;
+				transition: 0.3s;
+				content: "";
+			}
+			> span {
+				position: relative;
+				display: block;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				&:before, &:after {
+					position: absolute;
+					top: 50%;
+					display: block;
+					width: 8px;
+					height: 8px;
+					border: solid 1px conf.$navy-light;
+					border-radius: 50%;
+					transform: translateY(-50%);
+					content: "";
+				}
+				&:before {
+					left: 10px;
+				}
+				&:after {
+					right: 10px;
+				}
+			}
+		}
+	}
+	&:hover, &:focus {
+		color: conf.$light;
+		> span {
+			&:not(.btn-border) {
+				&:before {
+					width: 100%;
+				}
+			}
+		}
+	}
+	&.inline-block {
+		> span {
+			&:not(.btn-border) {
+				> span {
+					padding-left: 50px;
+					padding-right: 50px;
+				}
+			}
+		}
+	}
+	&-border {
+		@include conf.full();
+		&:before, &:after {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 90%;
+			background-color: #fff;
+			mask-image: url(../img/btn_border_mask-min.png);
+			mask-repeat: no-repeat;
+			mask-size: auto 100%;
+			content: "";
+		}
+		&:before {
+			left: 0;
+			mask-position: center left;
+		}
+		&:after {
+			right: 0;
+			mask-position: center right;
+		}
+	}
+	&:has(.btn-border) {
+		> span {
+			&:not(.btn-border) {
+				color: #fff !important;
+				background-color: rgba(#000, 0.3);
+				> span {
+					&:before, &:after {
+						border-color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+.quick-tab {
+	> .btn {
+		@include conf.mq(768) {
+			min-width: 150px;
+		}
+		@include conf.mq(0,768) {
+			width: calc((100% - 0.5rem) * 0.5);
+			max-width: 150px;
+		}
+		> span {
+			> span {
+				padding-top: 10px;
+				padding-bottom: 10px;
+				&:before, &:after {
+					width: 6px;
+					height: 6px;
+				}
+				&:before {
+					left: 6px;
+				}
+				&:after {
+					right: 6px;
+				}
+			}
+		}
+	}
+}
+
+.outside-double-border {
+	&:before,
+	&:after {
+		display: block;
+		flex-grow: 1;
+		border-top: solid 2px #ffe8c9;
+		border-bottom: solid 2px #ffe8c9;
+		height: 5px;
+		content: "";
+		@include conf.mq(992) {
+			height: 8px;
+		}
+	}
+	&:before {
+		margin-right: 1rem;
+	}
+	&:after {
+		margin-left: 1rem;
+	}
+}
+
+.category-banner {
+	> .overlay-filter, > .border-filter {
+		position: absolute;
+		display: block;
+		z-index: 10;
+	}
+	> .overlay-filter {
+		top: 0;
+		left: 0;
+		width: 22.6765799%;
+		height: 100%;
+		background-color: #444140;
+		mix-blend-mode: overlay;
+	}
+	> .border-filter {
+		inset: 5px;
+		border: solid 1px #fff;
+		@include conf.mq(768){
+			inset: 10px;
+		}
+		@include conf.mq(992){
+			inset: 15px;
+		}
+	}
+	> img {
+		@include conf.full();
+		object-fit: cover;
+	}
+	> .banner {
+		&-label {
+			@include conf.full(0,1);
+			align-items: center;
+			color: #fff;
+			padding-left: 1.5rem;
+			padding-bottom: 2.5rem;
+			z-index: 20;
+			@include conf.mq(768) {
+				padding-left: 2rem;
+			}
+		}
+		&-line-6 {
+			position: absolute;
+			left: 0;
+			bottom: 1rem;
+			display: flex;
+			width: 100%;
+			flex-direction: column;
+			gap: 3px;
+			opacity: 0.75;
+			z-index: 20;
+			> span {
+				display: block;
+				height: 1px;
+				background-color: #fff;
+			}
+		}
+	}
+	&:has(.btn-border){
+		&:hover, &:focus {
+			.btn {
+				> span {
+					&:not(.btn-border) {
+						&:before {
+							width: 100% !important;
+						}
+					}
+				}
+			}
+		}
+		&:not(:hover):not(:focus) {
+			.btn {
+				> span {
+					&:not(.btn-border) {
+						&:before {
+							width: 0 !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+@use "msg-config" as conf;
+@import "msg-custom";
+@import "msg-header";
+@import "msg-footer";
+
+#block {
+	&-2nd {
+		.quick-tab {
+			> .btn {
+				&.active {
+					color: conf.$light !important;
+					> span {
+						background-color: conf.$base !important;
+					}
+				}
+			}
+		}
+	}
+}

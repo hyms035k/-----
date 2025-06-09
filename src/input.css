@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .container {
+        @apply relative;
+    }
+
+    .block-box {
+        @apply py-10 md:py-20 xl:py-32;
+    }
+
+    .remove {
+        @apply
+            relative
+            overflow-hidden
+            block
+            w-full
+            h-0
+            text-[0.5em]
+            text-left
+            indent-[-9999px]
+            bg-center
+            bg-no-repeat
+            bg-cover
+    }
+}
+@layer utilities {
+    @screen md {
+        .leading-relaxed {
+            line-height: 1.84;
+        }
+    }
+}
+@screen md {
+    .container {
+        /* 768px以上でコンテナのmax-widthは650px */
+        @apply max-w-[650px];
+    }
+}
+@screen lg {
+    .container {
+        /* 992px以上でコンテナのmax-widthは870px */
+        @apply max-w-[870px];
+    }
+}
+@screen xl {
+    .container {
+        /* 1200px以上でコンテナのmax-widthは1070px */
+        @apply max-w-[1070px];
+    }
+}
+@screen 2xl {
+    .container {
+        /* 1367px以上でコンテナのmax-widthは1170px */
+        @apply max-w-[1200px];
+    }
+}

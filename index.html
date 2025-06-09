@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カワセ楽器（デモ）</title>
+
+    <link rel="stylesheet" href="./output.css">
+
+    <!-- GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap" rel="stylesheet">
+
+    <link href="./css/style.min.css" rel="stylesheet">
+</head>
+<body class="font-sans antialiased text-[#1a2530] bg-[#1a2530] tracking-wider">
+
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 before:content-[''] before:absolute before:inset-0 before:pointer-events-none before:transition-all before:duration-1000">
+        <div class="w-full mx-auto px-[1.25rem] md:px-[15px] xl:max-w-[1070px] 2xl:max-w-[1200px]">
+            <div class="flex justify-between items-center py-3 gap-x-8 xl:gap-x-0">
+                <h1 class="w-[70px] md:w-[100px] xl:w-[138px] z-20"><a href="" class="block"><img src="./img/logo-min.png" alt="" class="transition filter hover:brightness-150 duration-300"></a></h1>
+                <ul id="mobile-menu" class="xl:flex justify-center items-center gap-x-7 font-mplus">
+                    <li class="dropdown-toggle group">
+                        <a href="">
+                            <span class="text-sm">ギター</span>
+                            <code>&gt;</code>
+                        </a>
+                        <div>
+                            <ul class="text-sm leading-relaxed pb-4 xl:py-1 xl:px-4 xl:bg-white">
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown-toggle group">
+                        <a href="">
+                            <span class="text-sm">アクセサリ</span>
+                            <code>&gt;</code>
+                        </a>
+                        <div>
+                            <ul class="text-sm leading-relaxed pb-4 xl:py-1 xl:px-4 xl:bg-white">
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown-toggle group">
+                        <a href="">
+                            <span class="text-sm">弦</span>
+                            <code>&gt;</code>
+                        </a>
+                        <div>
+                            <ul class="text-sm leading-relaxed pb-4 xl:py-1 xl:px-4 xl:bg-white">
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown-toggle group">
+                        <a href="">
+                            <span class="text-sm">オリジナル</span>
+                            <code>&gt;</code>
+                        </a>
+                        <div>
+                            <ul class="text-sm leading-relaxed pb-4 xl:py-1 xl:px-4 xl:bg-white">
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown-toggle group">
+                        <a href="">
+                            <span class="text-sm">ショッピングガイド</span>
+                            <code>&gt;</code>
+                        </a>
+                        <div>
+                            <ul class="text-sm leading-relaxed pb-4 xl:py-1 xl:px-4 xl:bg-white">
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown-toggle group">
+                        <a href="">
+                            <span class="text-sm">KAWASEについて</span>
+                            <code>&gt;</code>
+                        </a>
+                        <div>
+                            <ul class="text-sm leading-relaxed pb-4 xl:py-1 xl:px-4 xl:bg-white">
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                                <li><a href="">サブメニュー</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="flex items-center grow xl:grow-0 justify-end gap-x-6 z-20">
+                    <li class="w-[20px] md:w-[23px]"><a href="" class="block"><img src="./img/icon_search.svg" alt=""></a></li>
+                    <li class="w-[20px] md:w-[23px]"><a href="" class="block"><img src="./img/icon_user.svg" alt=""></a></li>
+                    <li class="w-[20px] md:w-[23px]"><a href="" class="block"><img src="./img/icon_cart.svg" alt=""></a></li>
+                </ul>
+                <button id="hamburger-toggle" class="xl:hidden w-8 h-8 z-20">
+                    <span class="sr-only">メニューを開閉</span>
+                    <div id="icon-menu" class="space-y-2">
+                        <span class="block w-full h-0.5 bg-white"></span>
+                        <span class="block w-full h-0.5 bg-white"></span>
+                        <span class="block w-full h-0.5 bg-white"></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section id="hero-section" class="bg-[url('./img/top__hero_bg_sp.jpg')] md:bg-[url('./img/top__hero_bg.jpg')] h-screen md:h-[56.25vw] lg:h-screen flex flex-col items-center justify-center bg-cover bg-center text-white" aria-labelledby="hero-heading">
+        <div class="container h-full flex flex-col items-center justify-center">
+            <!-- ロゴのプレースホルダー -->
+            <h1 class="hero-logo w-[80%] md:w-[46.1538461%] mx-auto"><img src="./img/top__hero_logo-min.png" alt=""></h1>
+            <h2 id="hero-heading" class="text-2xl xl:text-[33px] text-center text-[#ffe1be] leading-[1.4] mt-6">
+                あらゆる場面に対処できる<br>長年の経験と技術
+            </h2>
+        </div>
+    </section>
+
+    <main class="px-2 md:px-[30px]">
+        <section id="block-1st" class="bg-[url('./img/top__block1st_bg.jpg')] bg-cover bg-center">
+            <div class="container block-box">
+                <div class="md:grid md:grid-cols-2 md:gap-[30px] lg:gap-[60px] items-center">
+                    <div class="flex flex-col">
+                        <div class="md:flex md:items-baseline md:gap-x-2 xl:gap-x-4 text-center md:text-left">
+                            <p class="font-serif text-4xl text-5xl xl:text-[65px] leading-tight">Message</p>
+                            <h2 class="font-sans lg:text-lg xl:text-[20px] mt-1">メッセージ</h2>
+                        </div>
+                        <div class="md:hidden my-5">
+                            <img src="./img/top__block1st_image.jpg" alt="メッセージのイメージ (スマホ)" class="w-full h-auto object-cover">
+                        </div>
+                        <div class="md:mt-5 lg:mt-10">
+                            <h3 class="font-sans text-[1.3rem] lg:text-[24px] font-medium">音を愛し、心に寄り添う。</h3>
+                            <p class="font-sans text-base text-justify mt-4 leading-relaxed">
+                                ここに和文のコメントが入ります。私たちのサービスや製品が、どのようにしてお客様の心に寄り添い、日常に彩りを与えるのか、その思いを込めてお伝えします。
+                                音楽のように、私たちの提供する価値が皆様の生活に調和をもたらすことを願っています。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex items-center justify-center">
+                        <img src="./img/top__block1st_image.jpg" alt="メッセージのイメージ (PC)" class="w-full max-w-md h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="block-2nd" class="bg-[url('./img/top__block2nd_bg.jpg')] bg-cover bg-top">
+            <div class="container block-box pt-0">
+
+                <!-- おすすめ商品 / Topics -->
+                <div id="topics" class="block-box pb-0 text-[#ffe8c9]">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="md:flex md:items-center md:justify-between">
+                            <div class="tracking-wide md:flex md:items-baseline md:gap-x-2 xl:gap-x-4 text-center md:text-left">
+                                <p class="text-4xl text-5xl xl:text-[56px] font-serif leading-tight">Topics</p>
+                                <h2 class="lg:text-lg xl:text-[20px] ml-2 mt-1 md:mt-0 font-sans">おすすめ商品</h2>
+                            </div>
+                            <div class="quick-tab flex justify-center md:justify-end gap-2 lg:gap-4 text-sm mt-4 md:mt-0">
+                                <div class="btn text-center active"><span><span>ランキング</span></span></div>
+                                <div class="btn text-center"><span><span>新着</span></span></div>
+                            </div>
+                        </div>
+                        <!-- 商品カードリスト -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-3 lg:gap-6 mt-6 mb-11">
+                            <!-- 商品カード（繰り返し） -->
+                            <a href="" class="text-left block">
+                                <img src="./img/top__block2nd_topics_guiter_1.jpg" alt="Limited Dreadnought Bass" class="mx-auto mb-4">
+                                <span class="block text-xs sm:text-sm">
+                                    Limited Dreadnought Bass®<br>
+                                    モデルNo: G0041026789
+                                </span>
+                                <span class="block mt-1 font-medium">¥101,500</span>
+                            </a>
+                            <!-- 以下、繰り返し -->
+                            <a href="" class="text-left block">
+                                <img src="./img/top__block2nd_topics_guiter_2.jpg" alt="Limited Dreadnought Bass" class="mx-auto mb-4">
+                                <span class="block text-xs sm:text-sm">
+                                    Limited Dreadnought Bass®<br>
+                                    モデルNo: G0041026790
+                                </span>
+                                <span class="block mt-1 font-medium">¥119,500</span>
+                            </a>
+                            <a href="" class="text-left block">
+                                <img src="./img/top__block2nd_topics_guiter_3.jpg" alt="Limited Dreadnought Bass" class="mx-auto mb-4">
+                                <span class="block text-xs sm:text-sm">
+                                    Limited Dreadnought Bass®<br>
+                                    モデルNo: G0041026791
+                                </span>
+                                <span class="block mt-1 font-medium">¥110,500</span>
+                            </a>
+                            <a href="" class="text-left block">
+                                <img src="./img/top__block2nd_topics_guiter_4.jpg" alt="Limited Dreadnought Bass" class="mx-auto mb-4">
+                                <span class="block text-xs sm:text-sm">
+                                    Limited Dreadnought Bass®<br>
+                                    モデルNo: G0041026792
+                                </span>
+                                <span class="block mt-1 font-medium">¥113,500</span>
+                            </a>
+                        </div>
+                        <div class="text-center">
+                            <a href="#" class="inline-block btn text-center align-middle"><span><span>詳しく見る</span></span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 定番商品 / Category セクション -->
+                <div id="category" class="block-box pb-0 text-[#ffe8c9]">
+                    <div class="text-center mb-8 md:mb-11">
+                        <h2 class="outside-double-border
+                            flex
+                            items-center
+                            mx-auto
+                            md:w-36 lg:w-48 xl:w-64
+                            lg:text-lg xl:text-[20px]
+                            font-medium
+                            leading-tight">定番商品</h2>
+                        <p class="font-serif text-4xl lg:text-5xl xl:text-[70px] leading-tight lg:leading-none">Category</p>
+                    </div>
+
+                    <!-- バナー 2x2 -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
+                        <!-- バナー1 -->
+                        <a href="" class="category-banner relative block h-[35vw] md:h-[126px] lg:h-[170px] xl:h-[238px]">
+                            <img src="./img/top__block2nd_category_1.jpg" alt="バナー1">
+                            <span class="overlay-filter"></span>
+                            <span class="banner-label absolute inset-0 flex items-center pl-6 md:pl-8 pb-10">
+                                <span class="block">
+                                    <span class="block font-medium text-sm md:text-base leading-tight mb-2">ギター</span>
+                                    <span class="block font-serif text-[1.375rem] lg:text-3xl xl:text-[44px] leading-none tracking-wide">Guitar</span>
+                                </span>
+                            </span>
+                            <span class="banner-line-6">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </a>
+
+                        <!-- バナー2 -->
+                        <a href="" class="category-banner relative block h-[35vw] md:h-[126px] lg:h-[170px] xl:h-[238px]">
+                            <img src="./img/top__block2nd_category_2.jpg" alt="バナー2">
+                            <span class="overlay-filter"></span>
+                            <span class="banner-label">
+                                <span class="block">
+                                    <span class="block font-medium text-sm md:text-base leading-tight mb-2">アクセサリ</span>
+                                    <span class="block font-serif text-[1.375rem] lg:text-3xl xl:text-[44px] leading-none tracking-wide">Accessories</span>
+                                </span>
+                            </span>
+                            <span class="banner-line-6">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </a>
+
+                        <!-- バナー3 -->
+                        <a href="" class="category-banner relative block h-[35vw] md:h-[126px] lg:h-[170px] xl:h-[238px]">
+                            <img src="./img/top__block2nd_category_3.jpg" alt="バナー3">
+                            <span class="overlay-filter"></span>
+                            <span class="banner-label">
+                                <span class="block">
+                                    <span class="block font-medium text-sm md:text-base leading-tight mb-2">弦</span>
+                                    <span class="block font-serif text-[1.375rem] lg:text-3xl xl:text-[44px] leading-none tracking-wide">String</span>
+                                </span>
+                            </span>
+                            <span class="banner-line-6">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </a>
+
+                        <!-- バナー4 -->
+                        <a href="" class="category-banner relative block h-[35vw] md:h-[126px] lg:h-[170px] xl:h-[238px]">
+                            <img src="./img/top__block2nd_category_4.jpg" alt="バナー4">
+                            <span class="overlay-filter"></span>
+                            <span class="banner-label">
+                                <span class="block">
+                                    <span class="block font-medium text-sm md:text-base leading-tight mb-2">オリジナル商品</span>
+                                    <span class="block font-serif text-[1.375rem] lg:text-3xl xl:text-[44px] leading-none tracking-wide">Kawase original</span>
+                                </span>
+                            </span>
+                            <span class="banner-line-6">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- About Kawase セクション -->
+                <div id="about-us" class="bg-[url('./img/top__block2nd_about.jpg')] mx-[-1.25rem] md:mx-0 pt-10 pb-12 lg:block-box mt-10 text-[#ffe8c9] bg-cover bg-center px-6 md:px-0">
+                    <h2 class="font-serif text-4xl md:text-5xl xl:text-[60px] text-center leading-tight">About Kawase</h2>
+                    <div class="text-white text-justify leading-relaxed md:leading-loose mx-auto mt-6 md:w-[80%] xl:w-[60%]">カワセ楽器店は、1944年の創業以来、音楽愛好家の皆さまに高品質なアコースティックギターとサービスを提供してまいりました。​長年の経験と技術を活かし、楽器の販売から修理・メンテナンス、オリジナル商品の開発まで幅広く手がけています。​これからも音楽を愛するすべての方々に寄り添い、心に響く音楽体験をお届けしてまいります。</div>
+                    <div class="text-center mt-11">
+                        <a href="#" class="inline-block btn text-center align-middle"><span><span>詳しく見る</span></span><span class="btn-border"></span></a>
+                    </div>
+                </div>
+
+                <!-- 新着情報 / News -->
+                <div id="news" class="block-box pb-0 text-[#ffe8c9]">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="md:flex md:items-center md:justify-between">
+                            <div class="tracking-wide md:flex md:items-baseline md:gap-x-2 xl:gap-x-4 text-center md:text-left">
+                                <p class="text-4xl text-5xl xl:text-[56px] font-serif leading-tight">News</p>
+                                <h2 class="lg:text-lg xl:text-[20px] ml-2 mt-1 md:mt-0 font-sans">新着情報</h2>
+                            </div>
+                            <div class="quick-tab hidden md:flex md:justify-end md:gap-2 lg:gap-4 text-sm mt-4 md:mt-0">
+                                <a href="#" class="btn text-center"><span><span>詳しく見る</span></span></a>
+                            </div>
+                        </div>
+                        <!-- ニュースアイテム -->
+                        <ul>
+                            <li class="relative overflow-hidden border-b border-[#ffe8c9] pt-8 pb-4">
+                                <div class="meta-field relative flex items-center gap-2 xl:gap-4">
+                                    <div class="font-roboto text-xs md:text-sm whitespace-nowrap">2025.06.01</div>
+                                    <a href="" class="inline-block
+                                        text-xs md:text-sm
+                                        text-[#1a2530]
+                                        hover:text-[#ffe8c9]
+                                        bg-[#ffe8c9]
+                                        hover:bg-[#1a2530]
+                                        leading-none
+                                        py-2
+                                        px-4
+                                        duration-300">お知らせ</a>
+                                </div>
+                                <a href="" class="relative flex items-center text-sm md:text-base py-3 md:py-4 hover:text-white duration-300">
+                                    <span class="block truncate w-[calc(100%-15px)]">ウェブサイトをリニューアルしました</span>
+                                    <code class="w-[15px] text-center leading-none">&gt;</code>
+                                </a>
+                            </li>
+                            <li class="relative overflow-hidden border-b border-[#ffe8c9] pt-8 pb-4">
+                                <div class="meta-field relative flex items-center gap-2 xl:gap-4">
+                                    <div class="font-roboto text-xs md:text-sm whitespace-nowrap">2025.06.01</div>
+                                    <a href="" class="inline-block
+                                        text-xs md:text-sm
+                                        text-[#1a2530]
+                                        hover:text-[#ffe8c9]
+                                        bg-[#ffe8c9]
+                                        hover:bg-[#1a2530]
+                                        leading-none
+                                        py-2
+                                        px-4
+                                        duration-300">お知らせ</a>
+                                </div>
+                                <a href="" class="relative flex items-center text-sm md:text-base py-3 md:py-4 hover:text-white duration-300">
+                                    <span class="block truncate w-[calc(100%-15px)]">ウェブサイトをリニューアルしました</span>
+                                    <code class="w-[15px] text-center leading-none">&gt;</code>
+                                </a>
+                            </li>
+                            <li class="relative overflow-hidden border-b border-[#ffe8c9] pt-8 pb-4">
+                                <div class="meta-field relative flex items-center gap-2 xl:gap-4">
+                                    <div class="font-roboto text-xs md:text-sm whitespace-nowrap">2025.06.01</div>
+                                    <a href="" class="inline-block
+                                        text-xs md:text-sm
+                                        text-[#1a2530]
+                                        hover:text-[#ffe8c9]
+                                        bg-[#ffe8c9]
+                                        hover:bg-[#1a2530]
+                                        leading-none
+                                        py-2
+                                        px-4
+                                        duration-300">お知らせ</a>
+                                </div>
+                                <a href="" class="relative flex items-center text-sm md:text-base py-3 md:py-4 hover:text-white duration-300">
+                                    <span class="block truncate w-[calc(100%-15px)]">ウェブサイトをリニューアルしました</span>
+                                    <code class="w-[15px] text-center leading-none">&gt;</code>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="md:hidden text-center mt-8">
+                            <a href="#" class="inline-block btn text-center align-middle"><span><span>詳しく見る</span></span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- その他バナー 2x2 -->
+                <div id="other-banner" class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 mt-10 pt-8">
+                    <!-- バナー5 -->
+                    <a href="" class="category-banner relative block h-[35vw] md:h-[126px] lg:h-[170px] xl:h-[238px]">
+                        <img src="./img/top__block2nd_category_5.jpg" alt="バナー5">
+                        <span class="overlay-filter"></span>
+                        <span class="banner-label">
+                            <span class="block">
+                                <span class="block font-medium text-sm md:text-base leading-tight mb-2">店舗情報</span>
+                                <span class="block font-serif text-[1.375rem] lg:text-3xl xl:text-[44px] leading-none tracking-wide">About Store</span>
+                            </span>
+                        </span>
+                        <span class="banner-line-6">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </a>
+
+                    <!-- バナー6 -->
+                    <a href="" class="category-banner relative block h-[35vw] md:h-[126px] lg:h-[170px] xl:h-[238px]">
+                        <img src="./img/top__block2nd_category_6.jpg" alt="バナー6">
+                        <span class="overlay-filter"></span>
+                        <span class="banner-label">
+                            <span class="block">
+                                <span class="block font-medium text-sm md:text-base leading-tight mb-2">メンテナンス</span>
+                                <span class="block font-serif text-[1.375rem] lg:text-3xl xl:text-[44px] leading-none tracking-wide">Maintenance</span>
+                            </span>
+                        </span>
+                        <span class="banner-line-6">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </a>
+
+                    <!-- バナー9 -->
+                    <a href="" class="category-banner relative block h-[45vw] md:h-[200px] lg:h-[240px] xl:h-[283px] sm:col-span-2">
+                        <img src="./img/top__block2nd_category_9.jpg" alt="バナー9">
+                        <span class="border-filter"></span>
+                        <span class="banner-label !pb-0 !pl-6 md:!pl-12">
+                            <span class="block">
+                                <span class="block font-medium text-sm md:text-base leading-tight mb-2">ご購入ガイド</span>
+                                <span class="block font-serif text-[1.375rem] lg:text-3xl xl:text-[44px] leading-none tracking-wide">Shopping Guide</span>
+                                <span class="block text-left mt-4 md:mt-8">
+                                    <span class="inline-block btn text-sm md:text-base text-center align-middle"><span><span class="!py-3 md:!py-4 !px-7 md:!px-12 leading-none">詳しく見る</span></span><span class="btn-border"></span></span>
+                                </span>
+                            </span>
+                        </span>
+                    </a>
+
+                    <!-- バナー7 -->
+                    <a href="" class="category-banner relative block h-[35vw] md:h-[126px] lg:h-[170px] xl:h-[238px]">
+                        <img src="./img/top__block2nd_category_7.jpg" alt="バナー7">
+                        <span class="overlay-filter"></span>
+                        <span class="banner-label">
+                            <span class="block">
+                                <span class="block font-medium text-sm md:text-base leading-tight mb-2">楽器OEM･ODMについて</span>
+                                <span class="block font-serif text-[1.375rem] lg:text-3xl xl:text-[44px] leading-none tracking-wide">Instrument OEM･ODM</span>
+                            </span>
+                        </span>
+                        <span class="banner-line-6">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </a>
+
+                    <!-- バナー8 -->
+                    <a href="" class="category-banner relative block h-[35vw] md:h-[126px] lg:h-[170px] xl:h-[238px]">
+                        <img src="./img/top__block2nd_category_8.jpg" alt="バナー8">
+                        <span class="overlay-filter"></span>
+                        <span class="banner-label">
+                            <span class="block">
+                                <span class="block font-medium text-sm md:text-base leading-tight mb-2">グッズOEM･ODMについて</span>
+                                <span class="block font-serif text-[1.375rem] lg:text-3xl xl:text-[44px] leading-none tracking-wide">Goods OEM･ODM</span>
+                            </span>
+                        </span>
+                        <span class="banner-line-6">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-white px-2 md:px-[30px]">
+        <div class="bg-[url(./img/footer_bg.jpg)] bg-cover bg-center w-full block-box">
+            <div class="container">
+                <div class="lg:flex justify-between items-start">
+                    <div class="lg:basis-4/12 text-center lg:text-left">
+                        <a href="" class="block w-36 md:w-[190px] mx-auto lg:mx-0">
+                            <img src="./img/logo-min.png" alt="Kawase Gakki Logo">
+                        </a>
+                        <div class="mt-6 leading-relaxed">
+                            株式会社カワセ楽器<br><span class="text-sm">東京都千代田区神田小川町2-4</span>
+                        </div>
+                        <div class="mt-3 leading-relaxed text-sm">
+                            <a href="tel:0332912723">03-3291-2723</a>
+                        </div>
+                        <div class="mt-3 leading-relaxed text-sm">
+                            営業時間:10:00~19:00 (18:00日祝)<br>水曜定休(祝日と重なる場合は営業)
+                        </div>
+                        <div class="mt-8 text-center lg:text-left">
+                            <a href="#" class="inline-block btn text-center align-middle"><span><span class="!py-4 !px-7 md:!px-12 leading-none">詳しく見る</span></span><span class="btn-border"></span></a>
+                        </div>
+                    </div>
+
+                    <!-- ナビゲーションリンク -->
+                    <div class="footer-link flex flex-wrap md:flex-nowrap md:justify-center md:justify-end gap-x-5 md:gap-x-12 !leading-loose whitespace-nowrap text-xs md:text-base mt-8 md:md-0">
+                        <ul class="grow md:grow-0">
+                            <li>
+                                <a href="#" class="hover:underline">商品一覧</a>
+                                <ul>
+                                    <li><code>&gt;</code><a href="#" class="hover:underline">ギター</a></li>
+                                    <li><code>&gt;</code><a href="#" class="hover:underline">アクセサリ</a></li>
+                                    <li><code>&gt;</code><a href="#" class="hover:underline">弦</a></li>
+                                    <li><code>&gt;</code><a href="#" class="hover:underline">オリジナル</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="grow md:grow-0">
+                            <li><a href="#" class="hover:underline">会社情報</a></li>
+                            <li><a href="#" class="hover:underline">直営店情報</a></li>
+                            <li><a href="#" class="hover:underline">KAWASEの想い</a></li>
+                        </ul>
+                        <ul class="w-full md:w-auto mt-3 md:mt-0 columns-2 md:columns-1">
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">買物ガイド</a></li>
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">特定商取引法</a></li>
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">保証規定</a></li>
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">メンテナンス情報</a></li>
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">新規会員登録</a></li>
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">ログイン</a></li>
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">カート</a></li>
+                            <li class="w-[50%] md:w-auto"><a href="#" class="hover:underline">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- コピーライト -->
+    <div class="w-full bg-[#1a2530] py-6 font-serif text-sm text-white text-center leading-tight">&copy;2025 KAWASE</div>
+
+    <script src="./js/script.min.js"></script>
+</body>
+</html>
